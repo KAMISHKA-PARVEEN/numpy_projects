@@ -108,3 +108,14 @@ print("Total students failed are " + str(total_failed))
 pass_percentage = (total_passed/no_of_students)*100
 print("Pass percentage " + str(pass_percentage) + "%")
 
+#top - 3 students (hishest total marks)
+sorted_idx = np.argsort(total)[::-1]
+print(names[sorted_idx[:3]])
+
+#overall topper
+print(names[sorted_idx[0]])
+
+#subject wise
+sorted_subwise_idx = np.argsort(marks, axis=0)[::-1, :]
+print(sorted_subwise_idx)
+print(names[sorted_subwise_idx[0, :]])
