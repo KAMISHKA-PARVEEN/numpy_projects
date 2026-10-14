@@ -1,6 +1,6 @@
 import numpy as np
 
-#storing daat as numpy array
+#storing data as numpy array
 #students' name:
 
 names = np.array(["Jacob", "Kendall", "Kylie", "Kim", "Gigi", "Stormi", "Zayn", "Khloe", "Hailey", "Kourtney"])
@@ -119,3 +119,23 @@ print(names[sorted_idx[0]])
 sorted_subwise_idx = np.argsort(marks, axis=0)[::-1, :]
 print(sorted_subwise_idx)
 print(names[sorted_subwise_idx[0, :]])
+
+'''at_risk = avg_stu < 50
+print(at_risk)
+print(names[at_risk])'''
+
+#failed in atleast any one sub
+failed = np.any(marks < 40, axis = 1)
+print(failed)
+
+at_risk = (avg_stu < 50) | failed
+print(at_risk)
+
+high_performers = avg_stu > 70
+print(names[high_performers])
+
+
+sub1 = input("Mention the sub:")
+idx = np.where(subjects == sub1)[0][0]
+sub1_above_90 = marks[:, idx] > 90
+print(names[sub1_above_90])
